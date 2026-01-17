@@ -1,0 +1,1220 @@
+{
+  "id": "trabzon",
+  "results": [
+    {
+      "id": "carsamba",
+      "text": "ÇARŞAMBA",
+      "q": "carsamba"
+    },
+    {
+      "id": "askale",
+      "text": "AŞKALE",
+      "q": "askale"
+    },
+    {
+      "id": "bayburt",
+      "text": "BAYBURT",
+      "q": "bayburt"
+    },
+    {
+      "id": "bozuyuk",
+      "text": "BOZÜYÜK",
+      "q": "bozuyuk"
+    },
+    {
+      "id": "erfelek",
+      "text": "ERFELEK",
+      "q": "erfelek"
+    },
+    {
+      "id": "datca",
+      "text": "DATÇA",
+      "q": "datca"
+    },
+    {
+      "id": "serik",
+      "text": "SERİK",
+      "q": "serik"
+    },
+    {
+      "id": "erzurum",
+      "text": "ERZURUM",
+      "q": "erzurum"
+    },
+    {
+      "id": "eskisehir",
+      "text": "ESKİŞEHİR",
+      "q": "eskisehir"
+    },
+    {
+      "id": "carsibasi",
+      "text": "ÇARŞIBAŞI",
+      "q": "carsibasi"
+    },
+    {
+      "id": "kemalpasa",
+      "text": "KEMALPAŞA",
+      "q": "kemalpasa"
+    },
+    {
+      "id": "gumushane",
+      "text": "GÜMÜŞHANE",
+      "q": "gumushane"
+    },
+    {
+      "id": "hanonu",
+      "text": "HANÖNÜ",
+      "q": "hanonu"
+    },
+    {
+      "id": "inegol",
+      "text": "İNEGÖL",
+      "q": "inegol"
+    },
+    {
+      "id": "gonen",
+      "text": "GÖNEN",
+      "q": "gonen"
+    },
+    {
+      "id": "kastamonu",
+      "text": "KASTAMONU",
+      "q": "kastamonu"
+    },
+    {
+      "id": "seydisehir-gunaydin-dt",
+      "text": "SEYDİŞEHİR GÜNAYDIN DT",
+      "q": "seydisehir-gunaydin-dt"
+    },
+    {
+      "id": "konya",
+      "text": "KONYA",
+      "q": "konya"
+    },
+    {
+      "id": "silifke",
+      "text": "SİLİFKE",
+      "q": "silifke"
+    },
+    {
+      "id": "manavgat",
+      "text": "MANAVGAT",
+      "q": "manavgat"
+    },
+    {
+      "id": "erdemli",
+      "text": "ERDEMLİ",
+      "q": "erdemli"
+    },
+    {
+      "id": "yesilhisar",
+      "text": "YEŞİLHİSAR",
+      "q": "yesilhisar"
+    },
+    {
+      "id": "silifke-susanoglu",
+      "text": "SİLİFKE (SUSANOĞLU)",
+      "q": "silifke-susanoglu"
+    },
+    {
+      "id": "silifke-kizkalesi",
+      "text": "SİLİFKE (KIZKALESİ)",
+      "q": "silifke-kizkalesi"
+    },
+    {
+      "id": "persembe-kumbasi",
+      "text": "PERŞEMBE (KUMBAŞI)",
+      "q": "persembe-kumbasi"
+    },
+    {
+      "id": "manisa",
+      "text": "MANİSA",
+      "q": "manisa"
+    },
+    {
+      "id": "cayeli",
+      "text": "ÇAYELİ",
+      "q": "cayeli"
+    },
+    {
+      "id": "seydisehir",
+      "text": "SEYDİŞEHİR",
+      "q": "seydisehir"
+    },
+    {
+      "id": "susurluk-konakoglu-dt",
+      "text": "SUSURLUK KONAKOĞLU DT",
+      "q": "susurluk-konakoglu-dt"
+    },
+    {
+      "id": "sinop",
+      "text": "SİNOP",
+      "q": "sinop"
+    },
+    {
+      "id": "torul",
+      "text": "TORUL",
+      "q": "torul"
+    },
+    {
+      "id": "vezirkopru",
+      "text": "VEZİRKÖPRÜ",
+      "q": "vezirkopru"
+    },
+    {
+      "id": "kulu",
+      "text": "KULU",
+      "q": "kulu"
+    },
+    {
+      "id": "caykara",
+      "text": "ÇAYKARA",
+      "q": "caykara"
+    },
+    {
+      "id": "amasya",
+      "text": "AMASYA",
+      "q": "amasya"
+    },
+    {
+      "id": "suluova",
+      "text": "SULUOVA",
+      "q": "suluova"
+    },
+    {
+      "id": "sivrihisar-rota-dt",
+      "text": "SİVRİHİSAR ROTA DT",
+      "q": "sivrihisar-rota-dt"
+    },
+    {
+      "id": "izmir-ilica",
+      "text": "İZMİR (ILICA)",
+      "q": "izmir-ilica"
+    },
+    {
+      "id": "sungurlu",
+      "text": "SUNGURLU",
+      "q": "sungurlu"
+    },
+    {
+      "id": "corum",
+      "text": "ÇORUM",
+      "q": "corum"
+    },
+    {
+      "id": "izmirurla",
+      "text": "İZMİR(URLA)",
+      "q": "izmirurla"
+    },
+    {
+      "id": "izmir-alacati",
+      "text": "İZMİR (ALAÇATI)",
+      "q": "izmir-alacati"
+    },
+    {
+      "id": "didim",
+      "text": "DİDİM",
+      "q": "didim"
+    },
+    {
+      "id": "kapakli",
+      "text": "KAPAKLI",
+      "q": "kapakli"
+    },
+    {
+      "id": "cerkezkoy",
+      "text": "ÇERKEZKÖY",
+      "q": "cerkezkoy"
+    },
+    {
+      "id": "idere-kopru",
+      "text": "İDERE KÖPRÜ",
+      "q": "idere-kopru"
+    },
+    {
+      "id": "burdur",
+      "text": "BURDUR",
+      "q": "burdur"
+    },
+    {
+      "id": "cankiri",
+      "text": "ÇANKIRI",
+      "q": "cankiri"
+    },
+    {
+      "id": "tosya",
+      "text": "TOSYA",
+      "q": "tosya"
+    },
+    {
+      "id": "kirikhan",
+      "text": "KIRIKHAN",
+      "q": "kirikhan"
+    },
+    {
+      "id": "susurluk",
+      "text": "SUSURLUK",
+      "q": "susurluk"
+    },
+    {
+      "id": "burhaniye",
+      "text": "BURHANİYE",
+      "q": "burhaniye"
+    },
+    {
+      "id": "ali-osman-ulusoy-sungurlu-dag-dt",
+      "text": "ALİ OSMAN ULUSOY SUNGURLU DAĞ DT",
+      "q": "ali-osman-ulusoy-sungurlu-dag-dt"
+    },
+    {
+      "id": "bodrum",
+      "text": "BODRUM",
+      "q": "bodrum"
+    },
+    {
+      "id": "derepazari",
+      "text": "DEREPAZARI",
+      "q": "derepazari"
+    },
+    {
+      "id": "milas",
+      "text": "MİLAS",
+      "q": "milas"
+    },
+    {
+      "id": "soke",
+      "text": "SÖKE",
+      "q": "soke"
+    },
+    {
+      "id": "aydin",
+      "text": "AYDIN",
+      "q": "aydin"
+    },
+    {
+      "id": "nazilli",
+      "text": "NAZİLLİ",
+      "q": "nazilli"
+    },
+    {
+      "id": "denizli",
+      "text": "DENİZLİ",
+      "q": "denizli"
+    },
+    {
+      "id": "gerze",
+      "text": "GERZE",
+      "q": "gerze"
+    },
+    {
+      "id": "boyabat",
+      "text": "BOYABAT",
+      "q": "boyabat"
+    },
+    {
+      "id": "dernekpazar",
+      "text": "DERNEKPAZAR",
+      "q": "dernekpazar"
+    },
+    {
+      "id": "19-mayis",
+      "text": "19 MAYIS",
+      "q": "19-mayis"
+    },
+    {
+      "id": "saraykoy",
+      "text": "SARAYKÖY",
+      "q": "saraykoy"
+    },
+    {
+      "id": "karacabey",
+      "text": "KARACABEY",
+      "q": "karacabey"
+    },
+    {
+      "id": "espiye",
+      "text": "ESPİYE",
+      "q": "espiye"
+    },
+    {
+      "id": "sorgun",
+      "text": "SORGUN",
+      "q": "sorgun"
+    },
+    {
+      "id": "kusadasi",
+      "text": "KUŞADASI",
+      "q": "kusadasi"
+    },
+    {
+      "id": "marmaris",
+      "text": "MARMARİS",
+      "q": "marmaris"
+    },
+    {
+      "id": "mugla",
+      "text": "MUĞLA",
+      "q": "mugla"
+    },
+    {
+      "id": "taflan",
+      "text": "TAFLAN",
+      "q": "taflan"
+    },
+    {
+      "id": "osmaniye-duzici",
+      "text": "OSMANİYE (DÜZİÇİ)",
+      "q": "osmaniye-duzici"
+    },
+    {
+      "id": "engiz",
+      "text": "ENGİZ",
+      "q": "engiz"
+    },
+    {
+      "id": "eynesil",
+      "text": "EYNESİL",
+      "q": "eynesil"
+    },
+    {
+      "id": "beysehir",
+      "text": "BEYŞEHİR",
+      "q": "beysehir"
+    },
+    {
+      "id": "kucukkuyu",
+      "text": "KÜÇÜKKUYU",
+      "q": "kucukkuyu"
+    },
+    {
+      "id": "ezine",
+      "text": "EZİNE",
+      "q": "ezine"
+    },
+    {
+      "id": "safranbolu",
+      "text": "SAFRANBOLU",
+      "q": "safranbolu"
+    },
+    {
+      "id": "karabuk",
+      "text": "KARABÜK",
+      "q": "karabuk"
+    },
+    {
+      "id": "aksaray",
+      "text": "AKSARAY",
+      "q": "aksaray"
+    },
+    {
+      "id": "nevsehir",
+      "text": "NEVŞEHİR",
+      "q": "nevsehir"
+    },
+    {
+      "id": "ereglikonya",
+      "text": "EREĞLİ(KONYA)",
+      "q": "ereglikonya"
+    },
+    {
+      "id": "avanos",
+      "text": "AVANOS",
+      "q": "avanos"
+    },
+    {
+      "id": "fatsa",
+      "text": "FATSA",
+      "q": "fatsa"
+    },
+    {
+      "id": "kutahya",
+      "text": "KÜTAHYA",
+      "q": "kutahya"
+    },
+    {
+      "id": "gazipasa-alanya",
+      "text": "GAZİPAŞA (ALANYA)",
+      "q": "gazipasa-alanya"
+    },
+    {
+      "id": "mahmutlaralanya",
+      "text": "MAHMUTLAR(ALANYA)",
+      "q": "mahmutlaralanya"
+    },
+    {
+      "id": "findikli",
+      "text": "FINDIKLI",
+      "q": "findikli"
+    },
+    {
+      "id": "aydinca",
+      "text": "AYDINCA",
+      "q": "aydinca"
+    },
+    {
+      "id": "finike",
+      "text": "FİNİKE",
+      "q": "finike"
+    },
+    {
+      "id": "kumluca",
+      "text": "KUMLUCA",
+      "q": "kumluca"
+    },
+    {
+      "id": "istanbul-sultanbeyli",
+      "text": "İSTANBUL (SULTANBEYLİ)",
+      "q": "istanbul-sultanbeyli"
+    },
+    {
+      "id": "giresun",
+      "text": "GİRESUN",
+      "q": "giresun"
+    },
+    {
+      "id": "ayvalik",
+      "text": "AYVALIK",
+      "q": "ayvalik"
+    },
+    {
+      "id": "sarimsakli",
+      "text": "SARIMSAKLI",
+      "q": "sarimsakli"
+    },
+    {
+      "id": "altinova-balikesir",
+      "text": "ALTINOVA (BALIKESİR)",
+      "q": "altinova-balikesir"
+    },
+    {
+      "id": "dikili",
+      "text": "DİKİLİ",
+      "q": "dikili"
+    },
+    {
+      "id": "bergama",
+      "text": "BERGAMA",
+      "q": "bergama"
+    },
+    {
+      "id": "aliaga",
+      "text": "ALİAĞA",
+      "q": "aliaga"
+    },
+    {
+      "id": "menemen",
+      "text": "MENEMEN",
+      "q": "menemen"
+    },
+    {
+      "id": "sandikli",
+      "text": "SANDIKLI",
+      "q": "sandikli"
+    },
+    {
+      "id": "gorele",
+      "text": "GÖRELE",
+      "q": "gorele"
+    },
+    {
+      "id": "cesme",
+      "text": "ÇEŞME",
+      "q": "cesme"
+    },
+    {
+      "id": "dinar",
+      "text": "DİNAR",
+      "q": "dinar"
+    },
+    {
+      "id": "havza",
+      "text": "HAVZA",
+      "q": "havza"
+    },
+    {
+      "id": "hopa",
+      "text": "HOPA",
+      "q": "hopa"
+    },
+    {
+      "id": "kavak",
+      "text": "KAVAK",
+      "q": "kavak"
+    },
+    {
+      "id": "kayseri",
+      "text": "KAYSERİ",
+      "q": "kayseri"
+    },
+    {
+      "id": "mersin",
+      "text": "MERSİN",
+      "q": "mersin"
+    },
+    {
+      "id": "cine",
+      "text": "ÇİNE",
+      "q": "cine"
+    },
+    {
+      "id": "merzifon",
+      "text": "MERZİFON",
+      "q": "merzifon"
+    },
+    {
+      "id": "akcaabat",
+      "text": "AKÇAABAT",
+      "q": "akcaabat"
+    },
+    {
+      "id": "nigde",
+      "text": "NİĞDE",
+      "q": "nigde"
+    },
+    {
+      "id": "of",
+      "text": "OF",
+      "q": "of"
+    },
+    {
+      "id": "ordu",
+      "text": "ORDU",
+      "q": "ordu"
+    },
+    {
+      "id": "pazar",
+      "text": "PAZAR",
+      "q": "pazar"
+    },
+    {
+      "id": "piraziz",
+      "text": "PİRAZİZ",
+      "q": "piraziz"
+    },
+    {
+      "id": "rize",
+      "text": "RİZE",
+      "q": "rize"
+    },
+    {
+      "id": "samsun",
+      "text": "SAMSUN",
+      "q": "samsun"
+    },
+    {
+      "id": "gulyali-husem-dt",
+      "text": "GÜLYALI HÜSEM DT",
+      "q": "gulyali-husem-dt"
+    },
+    {
+      "id": "surmene",
+      "text": "SÜRMENE",
+      "q": "surmene"
+    },
+    {
+      "id": "tarsus",
+      "text": "TARSUS",
+      "q": "tarsus"
+    },
+    {
+      "id": "ali-osman-ulusoy-bolu-dagi-dt",
+      "text": "ALİ OSMAN ULUSOY BOLU DAĞI DT",
+      "q": "ali-osman-ulusoy-bolu-dagi-dt"
+    },
+    {
+      "id": "tashan",
+      "text": "TASHAN",
+      "q": "tashan"
+    },
+    {
+      "id": "arakli",
+      "text": "ARAKLI",
+      "q": "arakli"
+    },
+    {
+      "id": "tekkekoy",
+      "text": "TEKKEKÖY",
+      "q": "tekkekoy"
+    },
+    {
+      "id": "terme",
+      "text": "TERME",
+      "q": "terme"
+    },
+    {
+      "id": "tirebolu",
+      "text": "TİREBOLU",
+      "q": "tirebolu"
+    },
+    {
+      "id": "kale-denizli",
+      "text": "KALE (DENİZLİ)",
+      "q": "kale-denizli"
+    },
+    {
+      "id": "trabzon",
+      "text": "TRABZON",
+      "q": "trabzon"
+    },
+    {
+      "id": "unye",
+      "text": "ÜNYE",
+      "q": "unye"
+    },
+    {
+      "id": "vakfikebir",
+      "text": "VAKFIKEBİR",
+      "q": "vakfikebir"
+    },
+    {
+      "id": "akcay",
+      "text": "AKÇAY",
+      "q": "akcay"
+    },
+    {
+      "id": "akhisar",
+      "text": "AKHİSAR",
+      "q": "akhisar"
+    },
+    {
+      "id": "altinoluk",
+      "text": "ALTINOLUK",
+      "q": "altinoluk"
+    },
+    {
+      "id": "bafra",
+      "text": "BAFRA",
+      "q": "bafra"
+    },
+    {
+      "id": "balikesir",
+      "text": "BALIKESİR",
+      "q": "balikesir"
+    },
+    {
+      "id": "ardesen",
+      "text": "ARDEŞEN",
+      "q": "ardesen"
+    },
+    {
+      "id": "bolu",
+      "text": "BOLU",
+      "q": "bolu"
+    },
+    {
+      "id": "bursa",
+      "text": "BURSA",
+      "q": "bursa"
+    },
+    {
+      "id": "selcuk",
+      "text": "SELÇUK",
+      "q": "selcuk"
+    },
+    {
+      "id": "tavas",
+      "text": "TAVAS",
+      "q": "tavas"
+    },
+    {
+      "id": "corlu",
+      "text": "ÇORLU",
+      "q": "corlu"
+    },
+    {
+      "id": "taskopru",
+      "text": "TAŞKÖPRÜ",
+      "q": "taskopru"
+    },
+    {
+      "id": "duzce",
+      "text": "DÜZCE",
+      "q": "duzce"
+    },
+    {
+      "id": "edremit",
+      "text": "EDREMİT",
+      "q": "edremit"
+    },
+    {
+      "id": "hatay",
+      "text": "HATAY",
+      "q": "hatay"
+    },
+    {
+      "id": "yozgat",
+      "text": "YOZGAT",
+      "q": "yozgat"
+    },
+    {
+      "id": "istanbul-esenyurt",
+      "text": "İSTANBUL (ESENYURT)",
+      "q": "istanbul-esenyurt"
+    },
+    {
+      "id": "iskenderun",
+      "text": "İSKENDERUN",
+      "q": "iskenderun"
+    },
+    {
+      "id": "payas",
+      "text": "PAYAS",
+      "q": "payas"
+    },
+    {
+      "id": "ceyhan",
+      "text": "CEYHAN",
+      "q": "ceyhan"
+    },
+    {
+      "id": "defne",
+      "text": "DEFNE",
+      "q": "defne"
+    },
+    {
+      "id": "karaman",
+      "text": "KARAMAN",
+      "q": "karaman"
+    },
+    {
+      "id": "gebze",
+      "text": "GEBZE",
+      "q": "gebze"
+    },
+    {
+      "id": "arhavi",
+      "text": "ARHAVİ",
+      "q": "arhavi"
+    },
+    {
+      "id": "gemlik",
+      "text": "GEMLİK",
+      "q": "gemlik"
+    },
+    {
+      "id": "alaca",
+      "text": "ALACA",
+      "q": "alaca"
+    },
+    {
+      "id": "golcuk",
+      "text": "GÖLCÜK",
+      "q": "golcuk"
+    },
+    {
+      "id": "turhal",
+      "text": "TURHAL",
+      "q": "turhal"
+    },
+    {
+      "id": "tokat",
+      "text": "TOKAT",
+      "q": "tokat"
+    },
+    {
+      "id": "sivas",
+      "text": "SİVAS",
+      "q": "sivas"
+    },
+    {
+      "id": "pinarbasi",
+      "text": "PINARBAŞI",
+      "q": "pinarbasi"
+    },
+    {
+      "id": "sariz",
+      "text": "SARIZ",
+      "q": "sariz"
+    },
+    {
+      "id": "goksun",
+      "text": "GÖKSUN",
+      "q": "goksun"
+    },
+    {
+      "id": "kahramanmaras",
+      "text": "KAHRAMANMARAŞ",
+      "q": "kahramanmaras"
+    },
+    {
+      "id": "gaziantep",
+      "text": "GAZİANTEP",
+      "q": "gaziantep"
+    },
+    {
+      "id": "gumushacikoy",
+      "text": "GÜMÜŞHACIKÖY",
+      "q": "gumushacikoy"
+    },
+    {
+      "id": "erzin",
+      "text": "ERZİN",
+      "q": "erzin"
+    },
+    {
+      "id": "osmaniye",
+      "text": "OSMANİYE",
+      "q": "osmaniye"
+    },
+    {
+      "id": "istanbul-esenler",
+      "text": "İSTANBUL (ESENLER)",
+      "q": "istanbul-esenler"
+    },
+    {
+      "id": "akyaka-gokova",
+      "text": "AKYAKA (GÖKOVA)",
+      "q": "akyaka-gokova"
+    },
+    {
+      "id": "istanbul-alibeykoy",
+      "text": "İSTANBUL (ALİBEYKÖY)",
+      "q": "istanbul-alibeykoy"
+    },
+    {
+      "id": "istanbul-dudullu",
+      "text": "İSTANBUL (DUDULLU)",
+      "q": "istanbul-dudullu"
+    },
+    {
+      "id": "izmit",
+      "text": "İZMİT",
+      "q": "izmit"
+    },
+    {
+      "id": "akyazi-giseler-adapazari",
+      "text": "AKYAZI GİŞELER (ADAPAZARI)",
+      "q": "akyazi-giseler-adapazari"
+    },
+    {
+      "id": "karamursel",
+      "text": "KARAMÜRSEL",
+      "q": "karamursel"
+    },
+    {
+      "id": "arsin",
+      "text": "ARSİN",
+      "q": "arsin"
+    },
+    {
+      "id": "kesap",
+      "text": "KEŞAP",
+      "q": "kesap"
+    },
+    {
+      "id": "nurdagi",
+      "text": "NURDAĞI",
+      "q": "nurdagi"
+    },
+    {
+      "id": "islahiye",
+      "text": "İSLAHİYE",
+      "q": "islahiye"
+    },
+    {
+      "id": "hassa",
+      "text": "HASSA",
+      "q": "hassa"
+    },
+    {
+      "id": "aktepe",
+      "text": "AKTEPE",
+      "q": "aktepe"
+    },
+    {
+      "id": "akbez",
+      "text": "AKBEZ",
+      "q": "akbez"
+    },
+    {
+      "id": "eregli-kdz",
+      "text": "EREĞLİ (KDZ)",
+      "q": "eregli-kdz"
+    },
+    {
+      "id": "zonguldak",
+      "text": "ZONGULDAK",
+      "q": "zonguldak"
+    },
+    {
+      "id": "belek",
+      "text": "BELEK",
+      "q": "belek"
+    },
+    {
+      "id": "macka",
+      "text": "MAÇKA",
+      "q": "macka"
+    },
+    {
+      "id": "mustafakemalpasa",
+      "text": "MUSTAFAKEMALPAŞA",
+      "q": "mustafakemalpasa"
+    },
+    {
+      "id": "yatagan",
+      "text": "YATAĞAN",
+      "q": "yatagan"
+    },
+    {
+      "id": "tekirdag",
+      "text": "TEKİRDAĞ",
+      "q": "tekirdag"
+    },
+    {
+      "id": "orhangazi",
+      "text": "ORHANGAZİ",
+      "q": "orhangazi"
+    },
+    {
+      "id": "osmancik",
+      "text": "OSMANCIK",
+      "q": "osmancik"
+    },
+    {
+      "id": "dortyol",
+      "text": "DÖRTYOL",
+      "q": "dortyol"
+    },
+    {
+      "id": "canakkale",
+      "text": "ÇANAKKALE",
+      "q": "canakkale"
+    },
+    {
+      "id": "lapseki",
+      "text": "LAPSEKİ",
+      "q": "lapseki"
+    },
+    {
+      "id": "biga",
+      "text": "BİGA",
+      "q": "biga"
+    },
+    {
+      "id": "bandirma",
+      "text": "BANDIRMA",
+      "q": "bandirma"
+    },
+    {
+      "id": "sarp-kemalpasa",
+      "text": "SARP (KEMALPAŞA)",
+      "q": "sarp-kemalpasa"
+    },
+    {
+      "id": "silivri",
+      "text": "SİLİVRİ",
+      "q": "silivri"
+    },
+    {
+      "id": "yalova",
+      "text": "YALOVA",
+      "q": "yalova"
+    },
+    {
+      "id": "yomra",
+      "text": "YOMRA",
+      "q": "yomra"
+    },
+    {
+      "id": "ankara-sogutozu",
+      "text": "ANKARA (SÖĞÜTÖZÜ)",
+      "q": "ankara-sogutozu"
+    },
+    {
+      "id": "besikduzu",
+      "text": "BEŞİKDÜZÜ",
+      "q": "besikduzu"
+    },
+    {
+      "id": "ankara-asti",
+      "text": "ANKARA (AŞTİ)",
+      "q": "ankara-asti"
+    },
+    {
+      "id": "antalya",
+      "text": "ANTALYA",
+      "q": "antalya"
+    },
+    {
+      "id": "burdur-cavdir",
+      "text": "BURDUR (ÇAVDIR)",
+      "q": "burdur-cavdir"
+    },
+    {
+      "id": "dalaman",
+      "text": "DALAMAN",
+      "q": "dalaman"
+    },
+    {
+      "id": "fethiye",
+      "text": "FETHİYE",
+      "q": "fethiye"
+    },
+    {
+      "id": "isparta",
+      "text": "ISPARTA",
+      "q": "isparta"
+    },
+    {
+      "id": "ankara-kayas",
+      "text": "ANKARA (KAYAŞ)",
+      "q": "ankara-kayas"
+    },
+    {
+      "id": "izmir",
+      "text": "İZMİR",
+      "q": "izmir"
+    },
+    {
+      "id": "kemer",
+      "text": "KEMER",
+      "q": "kemer"
+    },
+    {
+      "id": "kirikkale",
+      "text": "KIRIKKALE",
+      "q": "kirikkale"
+    },
+    {
+      "id": "bulancak",
+      "text": "BULANCAK",
+      "q": "bulancak"
+    },
+    {
+      "id": "ortaca",
+      "text": "ORTACA",
+      "q": "ortaca"
+    },
+    {
+      "id": "salihli",
+      "text": "SALİHLİ",
+      "q": "salihli"
+    },
+    {
+      "id": "burdur-tefenni",
+      "text": "BURDUR (TEFENNİ)",
+      "q": "burdur-tefenni"
+    },
+    {
+      "id": "turgutlu",
+      "text": "TURGUTLU",
+      "q": "turgutlu"
+    },
+    {
+      "id": "kemalpasa-hopa",
+      "text": "KEMALPAŞA (HOPA)",
+      "q": "kemalpasa-hopa"
+    },
+    {
+      "id": "usak",
+      "text": "UŞAK",
+      "q": "usak"
+    },
+    {
+      "id": "adana",
+      "text": "ADANA",
+      "q": "adana"
+    },
+    {
+      "id": "adapazari",
+      "text": "ADAPAZARI",
+      "q": "adapazari"
+    },
+    {
+      "id": "afyon",
+      "text": "AFYON",
+      "q": "afyon"
+    },
+    {
+      "id": "alacam",
+      "text": "ALAÇAM",
+      "q": "alacam"
+    },
+    {
+      "id": "terme-soganci-park-dt",
+      "text": "TERME SOĞANCI PARK DT",
+      "q": "terme-soganci-park-dt"
+    },
+    {
+      "id": "denizli-ender-dt",
+      "text": "DENİZLİ ENDER DT",
+      "q": "denizli-ender-dt"
+    },
+    {
+      "id": "gumus-park-dt",
+      "text": "GÜMÜŞ PARK DT",
+      "q": "gumus-park-dt"
+    },
+    {
+      "id": "osmancik-ganita-park-dt",
+      "text": "OSMANCIK GANİTA PARK DT",
+      "q": "osmancik-ganita-park-dt"
+    },
+    {
+      "id": "yozgat-coskun-dt",
+      "text": "YOZGAT COŞKUN DT",
+      "q": "yozgat-coskun-dt"
+    },
+    {
+      "id": "sivrihisar-nasreddin-hoca-dt",
+      "text": "SİVRİHİSAR NASREDDİN HOCA DT",
+      "q": "sivrihisar-nasreddin-hoca-dt"
+    },
+    {
+      "id": "alanya",
+      "text": "ALANYA",
+      "q": "alanya"
+    },
+    {
+      "id": "kare-karayolu-dt",
+      "text": "KARE KARAYOLU DT",
+      "q": "kare-karayolu-dt"
+    },
+    {
+      "id": "salipazari",
+      "text": "SALIPAZARI",
+      "q": "salipazari"
+    },
+    {
+      "id": "bogazliyan",
+      "text": "BOĞAZLIYAN",
+      "q": "bogazliyan"
+    },
+    {
+      "id": "sarikaya",
+      "text": "SARIKAYA",
+      "q": "sarikaya"
+    },
+    {
+      "id": "sungurlu-ocakli-dt",
+      "text": "SUNGURLU OCAKLI DT",
+      "q": "sungurlu-ocakli-dt"
+    },
+    {
+      "id": "kozan",
+      "text": "KOZAN",
+      "q": "kozan"
+    },
+    {
+      "id": "kadirli",
+      "text": "KADİRLİ",
+      "q": "kadirli"
+    },
+    {
+      "id": "banaz",
+      "text": "BANAZ",
+      "q": "banaz"
+    },
+    {
+      "id": "demireller-dt",
+      "text": "DEMİRELLER DT",
+      "q": "demireller-dt"
+    },
+    {
+      "id": "ipekyolu-dt",
+      "text": "İPEKYOLU DT",
+      "q": "ipekyolu-dt"
+    }
+  ]
+}

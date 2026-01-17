@@ -1,0 +1,263 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  firstName String?
+  lastName  String?
+  phone     String?
+  role      UserRole @default(CUSTOMER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tickets   Ticket[]
+  issuedTickets Ticket[] @relation("TicketIssuer")
+
+  @@map("users")
+}
+
+enum UserRole {
+  ADMIN
+  CUSTOMER
+  AGENT
+}
+
+model Station {
+  id        String      @id @default(uuid())
+  name      String      @unique
+  slug      String      @unique // New field for SEO-friendly URLs and searching
+  type      StationType @default(CITY)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@map("stations")
+}
+
+enum StationType {
+  CITY
+  REST_FACILITY
+  TERMINAL
+}
+
+model Bus {
+  id         String    @id @default(uuid())
+  plate      String    @unique
+  model      String
+  seatCount  Int
+  layoutId   String?   // New relation to custom layout
+  layout     SeatLayout? @relation(fields: [layoutId], references: [id])
+  layoutType LayoutType @default(LAYOUT_2_1) // Deprecated but kept for backward compatibility if needed
+  busPhone    String?
+  taxOffice   String?
+  taxNumber   String?
+  owner       String?
+  
+  // Tracking
+  testLat     Float?
+  testLng     Float?
+
+  // Relations
+  routes      Route[]
+  specs       BusSpecs? // Keeping for backward compatibility for now
+  features    BusFeature[] // New Dynamic Features
+
+  // Live Tracking
+  latitude    Float?
+  longitude   Float?
+  lastSeen    DateTime?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime? @updatedAt // Made optional to fix migration issue
+
+  @@map("buses")
+}
+
+model SeatLayout {
+  id        String   @id @default(uuid())
+  name      String   @unique // GUNCEL41, TRAVEGO_STD
+  rowCount  Int      // Total rows in grid
+  colCount  Int      // Total cols in grid (e.g., 5)
+  seats     Json     // Array of { seatNo: 1, x: 0, y: 0, type: 'seat'|'corridor'|'door' }
+  buses     Bus[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("seat_layouts")
+}
+
+model BusFeature {
+  id          String   @id @default(uuid())
+  name        String   // e.g. "Wifi"
+  description String?  // e.g. "Sınırsız İnternet"
+  iconPath    String   // e.g. "/features/wifi.png"
+  buses       Bus[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("bus_features")
+}
+
+model BusSpecs {
+  id          String   @id @default(uuid())
+  busId       String   @unique
+  bus         Bus      @relation(fields: [busId], references: [id], onDelete: Cascade)
+  brand       String?
+  year        Int?
+  engineType  String?
+  fuelType    String?
+  hasAC       Boolean  @default(true)
+  hasWifi     Boolean  @default(false)
+  hasToilet   Boolean  @default(false)
+  hasTV       Boolean  @default(false)
+  features    String[] // Additional features as array
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("bus_specs")
+}
+
+enum LayoutType {
+  LAYOUT_2_1 // 2+1 configuration
+  LAYOUT_2_2 // 2+2 configuration
+  LAYOUT_1_2 // 1+2 configuration
+}
+
+model Route {
+  id              String     @id @default(uuid())
+  fromCity        String
+  toCity          String
+  // stations String[] removed in favor of RouteStation relation
+  routeStations   RouteStation[] // Ordered list of stops with times
+  restStops       String[]   // List of rest facilities/stops
+  departureTime   DateTime
+  arrivalTime     DateTime
+  price           Float      // Full route price (fallback)
+  prices          RoutePrice[]
+  type            RouteType  @default(STANDARD)
+  busId           String
+  bus             Bus        @relation(fields: [busId], references: [id])
+  captainName     String?
+  firstDriverName String?
+  secondDriverName String?
+  assistantName   String?
+  isActive        Boolean    @default(true)
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  tickets         Ticket[]
+
+  @@index([fromCity, toCity])
+  @@index([departureTime])
+  @@map("routes")
+}
+
+model RouteStation {
+  id        String   @id @default(uuid())
+  routeId   String
+  route     Route    @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  station   String   // Station Name (e.g. Izmit)
+  time      DateTime // Departure time from this station
+  order     Int      // Sequence order (1, 2, 3...)
+
+  @@index([routeId])
+  @@map("route_stations")
+}
+
+model RoutePrice {
+  id        String   @id @default(uuid())
+  routeId   String
+  route     Route    @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  fromCity  String
+  toCity    String
+  price     Float
+  isSold    Boolean  @default(true) // Is this specific segment open for sale?
+  
+  @@unique([routeId, fromCity, toCity])
+  @@map("route_prices")
+}
+
+enum RouteType {
+  STANDARD
+  EXPRESS
+  VIP
+  LUXURY
+}
+
+model Ticket {
+  id              String        @id @default(uuid())
+  pnrNumber       String        @unique
+  routeId         String
+  route           Route         @relation(fields: [routeId], references: [id])
+  userId          String?       // Made optional for agent/anonymous sales
+  user            User?         @relation(fields: [userId], references: [id])
+  issuedById      String?       // Who performed the action (Agent, Admin, or the User themselves)
+  issuedBy        User?         @relation("TicketIssuer", fields: [issuedById], references: [id])
+  fromCity        String
+  toCity          String
+  fromStopIndex   Int           // Index of departure stop (e.g., 0)
+  toStopIndex     Int           // Index of arrival stop (e.g., 3)
+  seatNumber      Int
+  gender          Gender
+  price           Float
+  tcKimlikNo      String?
+  userPhoneNumber String
+  passengerName   String
+  status          TicketStatus  @default(RESERVED)
+  paymentStatus   PaymentStatus @default(PENDING)
+  payment         Payment?
+  suspendedAt     DateTime?
+  cancelledAt     DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  // Unique constraint removed because seat can be reused for different segments
+  // @@unique([routeId, seatNumber]) 
+  @@index([pnrNumber])
+  @@index([routeId, status])
+  @@index([userId])
+  @@map("tickets")
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum TicketStatus {
+  RESERVED
+  CONFIRMED
+  SUSPENDED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  REFUNDED
+}
+
+model Payment {
+  id            String        @id @default(uuid())
+  ticketId      String        @unique
+  ticket        Ticket        @relation(fields: [ticketId], references: [id])
+  transactionId String        @unique
+  amount        Float
+  currency      String        @default("TRY")
+  provider      String        // e.g. "IYZICO", "MOCK"
+  status        PaymentStatus @default(PENDING)
+  rawResponse   String?       // Store full JSON response if needed
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@map("payments")
+}

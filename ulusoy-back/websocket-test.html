@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Seat Updates - Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .status {
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .status.connected {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.disconnected {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .controls {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        input, button {
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button.danger {
+            background-color: #f44336;
+        }
+        button.danger:hover {
+            background-color: #da190b;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .events {
+            margin-top: 30px;
+        }
+        .event {
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #2196F3;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .event.seat_reserved {
+            border-left-color: #ff9800;
+            background-color: #fff3e0;
+        }
+        .event.seat_confirmed {
+            border-left-color: #4CAF50;
+            background-color: #e8f5e9;
+        }
+        .event.seat_suspended {
+            border-left-color: #9e9e9e;
+            background-color: #f5f5f5;
+        }
+        .event.seat_cancelled {
+            border-left-color: #f44336;
+            background-color: #ffebee;
+        }
+        .event.seat_available {
+            border-left-color: #2196F3;
+            background-color: #e3f2fd;
+        }
+        .event-type {
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .event-details {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+        .event-time {
+            color: #999;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .clear-btn {
+            background-color: #9e9e9e;
+            margin-top: 10px;
+        }
+        .clear-btn:hover {
+            background-color: #757575;
+        }
+        .info-box {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #2196F3;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔌 WebSocket Real-Time Seat Updates - Test Console</h1>
+        
+        <div id="statusBox" class="status disconnected">
+            ❌ Disconnected - Click "Connect" to start
+        </div>
+
+        <div class="info-box">
+            <strong>📝 Instructions:</strong>
+            <ol>
+                <li>First, make sure your NestJS server is running: <code>npm run start:dev</code></li>
+                <li>Click "Connect" to establish WebSocket connection</li>
+                <li>Enter a Route ID and click "Subscribe to Route"</li>
+                <li>Use REST API to book/pay/cancel tickets and watch events appear here in real-time!</li>
+            </ol>
+        </div>
+
+        <div class="controls">
+            <h3>Connection Control</h3>
+            <button id="connectBtn" onclick="connect()">🔌 Connect</button>
+            <button id="disconnectBtn" onclick="disconnect()" disabled>🔌 Disconnect</button>
+            
+            <h3 style="margin-top: 20px;">Route Subscription</h3>
+            <input type="text" id="routeIdInput" placeholder="Enter Route ID (UUID)" style="width: 300px;">
+            <button id="subscribeBtn" onclick="subscribeToRoute()" disabled>📡 Subscribe to Route</button>
+            <button id="unsubscribeBtn" onclick="unsubscribeFromRoute()" disabled>📡 Unsubscribe</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">Connection Status</div>
+                <div class="stat-value" id="connectionStatus">❌</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div class="stat-label">Events Received</div>
+                <div class="stat-value" id="eventCount">0</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div class="stat-label">Socket ID</div>
+                <div class="stat-value" id="socketId" style="font-size: 14px;">-</div>
+            </div>
+        </div>
+
+        <div class="events">
+            <h2>📬 Real-Time Events</h2>
+            <button class="clear-btn" onclick="clearEvents()">🗑️ Clear Events</button>
+            <div id="eventsList"></div>
+        </div>
+    </div>
+
+    <!-- Socket.IO Client Library -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    
+    <script>
+        let socket = null;
+        let eventCount = 0;
+        let currentRouteId = null;
+
+        function updateStatus(connected) {
+            const statusBox = document.getElementById('statusBox');
+            const connectionStatus = document.getElementById('connectionStatus');
+            const connectBtn = document.getElementById('connectBtn');
+            const disconnectBtn = document.getElementById('disconnectBtn');
+            const subscribeBtn = document.getElementById('subscribeBtn');
+            const unsubscribeBtn = document.getElementById('unsubscribeBtn');
+
+            if (connected) {
+                statusBox.className = 'status connected';
+                statusBox.innerHTML = '✅ Connected to WebSocket Server';
+                connectionStatus.textContent = '✅';
+                connectBtn.disabled = true;
+                disconnectBtn.disabled = false;
+                subscribeBtn.disabled = false;
+            } else {
+                statusBox.className = 'status disconnected';
+                statusBox.innerHTML = '❌ Disconnected from WebSocket Server';
+                connectionStatus.textContent = '❌';
+                connectBtn.disabled = false;
+                disconnectBtn.disabled = true;
+                subscribeBtn.disabled = true;
+                unsubscribeBtn.disabled = true;
+                document.getElementById('socketId').textContent = '-';
+            }
+        }
+
+        function connect() {
+            console.log('Connecting to WebSocket...');
+            
+            socket = io('http://localhost:3000/seats', {
+                transports: ['websocket', 'polling']
+            });
+
+            socket.on('connect', () => {
+                console.log('✅ Connected to WebSocket server');
+                console.log('Socket ID:', socket.id);
+                updateStatus(true);
+                document.getElementById('socketId').textContent = socket.id.substring(0, 8) + '...';
+                addSystemEvent('Connected to server', 'success');
+            });
+
+            socket.on('disconnect', () => {
+                console.log('❌ Disconnected from WebSocket server');
+                updateStatus(false);
+                addSystemEvent('Disconnected from server', 'error');
+            });
+
+            socket.on('error', (error) => {
+                console.error('⚠️ WebSocket error:', error);
+                addSystemEvent('Error: ' + JSON.stringify(error), 'error');
+            });
+
+            socket.on('subscribed', (data) => {
+                console.log('✅ Subscribed:', data);
+                addSystemEvent(`Subscribed to route: ${data.routeId}`, 'success');
+                document.getElementById('unsubscribeBtn').disabled = false;
+            });
+
+            socket.on('unsubscribed', (data) => {
+                console.log('✅ Unsubscribed:', data);
+                addSystemEvent(`Unsubscribed from route: ${data.routeId}`, 'success');
+                document.getElementById('unsubscribeBtn').disabled = true;
+            });
+
+            socket.on('seat_update', (payload) => {
+                console.log('📢 Seat Update:', payload);
+                eventCount++;
+                document.getElementById('eventCount').textContent = eventCount;
+                addSeatEvent(payload);
+            });
+
+            socket.on('connect_error', (error) => {
+                console.error('❌ Connection error:', error);
+                addSystemEvent('Connection failed! Make sure server is running on port 3000', 'error');
+            });
+        }
+
+        function disconnect() {
+            if (socket) {
+                socket.disconnect();
+                socket = null;
+            }
+        }
+
+        function subscribeToRoute() {
+            const routeId = document.getElementById('routeIdInput').value.trim();
+            
+            if (!routeId) {
+                alert('Please enter a Route ID');
+                return;
+            }
+
+            if (!socket || !socket.connected) {
+                alert('Please connect to WebSocket first');
+                return;
+            }
+
+            currentRouteId = routeId;
+            socket.emit('subscribe_route', { routeId });
+            console.log('📡 Subscribing to route:', routeId);
+        }
+
+        function unsubscribeFromRoute() {
+            if (!currentRouteId) {
+                alert('No route subscribed');
+                return;
+            }
+
+            socket.emit('unsubscribe_route', { routeId: currentRouteId });
+            console.log('📡 Unsubscribing from route:', currentRouteId);
+            currentRouteId = null;
+        }
+
+        function addSeatEvent(payload) {
+            const eventsList = document.getElementById('eventsList');
+            const eventDiv = document.createElement('div');
+            eventDiv.className = `event ${payload.eventType}`;
+            
+            const eventTypeIcons = {
+                'seat_reserved': '🔵',
+                'seat_confirmed': '✅',
+                'seat_suspended': '⏸️',
+                'seat_cancelled': '❌',
+                'seat_available': '🟢'
+            };
+
+            const icon = eventTypeIcons[payload.eventType] || '📢';
+            
+            eventDiv.innerHTML = `
+                <div class="event-type">${icon} ${payload.eventType.replace('_', ' ').toUpperCase()}</div>
+                <div class="event-details">
+                    <strong>Route:</strong> ${payload.routeId}<br>
+                    <strong>Seat Number:</strong> ${payload.seatNumber}<br>
+                    ${payload.ticketId ? `<strong>Ticket ID:</strong> ${payload.ticketId}<br>` : ''}
+                    ${payload.pnrNumber ? `<strong>PNR:</strong> ${payload.pnrNumber}<br>` : ''}
+                    ${payload.metadata ? `
+                        ${payload.metadata.fromCity ? `<strong>From:</strong> ${payload.metadata.fromCity}<br>` : ''}
+                        ${payload.metadata.toCity ? `<strong>To:</strong> ${payload.metadata.toCity}<br>` : ''}
+                        ${payload.metadata.price ? `<strong>Price:</strong> ${payload.metadata.price} TRY<br>` : ''}
+                        ${payload.metadata.gender ? `<strong>Gender:</strong> ${payload.metadata.gender}<br>` : ''}
+                    ` : ''}
+                </div>
+                <div class="event-time">
+                    ${new Date(payload.timestamp).toLocaleString()}
+                </div>
+            `;
+            
+            eventsList.insertBefore(eventDiv, eventsList.firstChild);
+        }
+
+        function addSystemEvent(message, type) {
+            const eventsList = document.getElementById('eventsList');
+            const eventDiv = document.createElement('div');
+            eventDiv.className = 'event';
+            eventDiv.style.borderLeftColor = type === 'error' ? '#f44336' : '#4CAF50';
+            eventDiv.style.backgroundColor = type === 'error' ? '#ffebee' : '#e8f5e9';
+            
+            eventDiv.innerHTML = `
+                <div class="event-type">${type === 'error' ? '⚠️' : 'ℹ️'} SYSTEM</div>
+                <div class="event-details">${message}</div>
+                <div class="event-time">${new Date().toLocaleString()}</div>
+            `;
+            
+            eventsList.insertBefore(eventDiv, eventsList.firstChild);
+        }
+
+        function clearEvents() {
+            document.getElementById('eventsList').innerHTML = '';
+            eventCount = 0;
+            document.getElementById('eventCount').textContent = '0';
+        }
+
+        // Auto-connect on page load (optional)
+        // window.onload = connect;
+    </script>
+</body>
+</html>

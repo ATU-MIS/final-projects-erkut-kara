@@ -1,0 +1,46 @@
+flowchart TB
+    classDef actor fill:#fef7e2,stroke:#c58d00,stroke-width:1px
+    classDef usecase fill:#e5f2ff,stroke:#1f5f99,stroke-width:1px
+
+    subgraph Actors
+        customer((Customer))
+        agent((Agent))
+        admin((Admin))
+        gateway((Payment Gateway))
+    end
+
+    subgraph UseCases
+        uc_search[[Search & filter routes]]
+        uc_reserve[[Reserve seat]]
+        uc_purchase[[Purchase ticket]]
+        uc_refund[[Request refund]]
+        uc_manage_bus[[Manage buses]]
+        uc_manage_route[[Create & update routes]]
+        uc_manage_ticket[[Suspend / cancel ticket]]
+        uc_stats[[View dashboards & stats]]
+        uc_real_time[[Subscribe to seat updates]]
+    end
+
+    customer --- uc_search
+    customer --- uc_reserve
+    customer --- uc_purchase
+    customer --- uc_refund
+    customer --- uc_real_time
+
+    agent --- uc_manage_route
+    agent --- uc_manage_ticket
+    agent --- uc_stats
+
+    admin --- uc_manage_bus
+    admin --- uc_manage_route
+    admin --- uc_manage_ticket
+    admin --- uc_stats
+
+    uc_purchase --- gateway
+    uc_refund --- gateway
+
+    class customer,agent,admin,gateway actor
+    class uc_search,uc_reserve,uc_purchase,uc_refund,uc_manage_bus,uc_manage_route,uc_manage_ticket,uc_stats,uc_real_time usecase
+
+
+

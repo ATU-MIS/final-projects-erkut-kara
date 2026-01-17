@@ -1,0 +1,27 @@
+sequenceDiagram
+    autonumber
+    participant C as Customer
+    participant UI as Frontend / API Client
+    participant RS as RouteService
+    participant TS as TicketService
+    participant PS as PaymentService
+    participant PG as IyzicoAdapter
+    participant GW as SeatGateway
+
+    C->>UI: Search for a route & select seat
+    UI->>RS: GET /routes?filters
+    RS-->>UI: Route list with availability
+    UI->>TS: POST /tickets (routeId, seat, user)
+    TS->>TS: Validate seat availability & lock seat
+    TS-->>UI: Reservation created (PNR, status PENDING)
+    UI->>PS: POST /payments (ticketId, card info)
+    PS->>PG: Charge request
+    PG-->>PS: Payment success
+    PS->>TS: Confirm ticket & persist payment
+    TS->>GW: Broadcast seatUpdate(routeId, seat)
+    GW-->>C: Real-time notification
+    TS-->>UI: Ticket status CONFIRMED + receipt
+    UI-->>C: Show confirmed ticket & PNR
+
+
+

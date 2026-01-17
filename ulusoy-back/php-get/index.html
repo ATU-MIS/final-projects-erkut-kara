@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ali Osman ULUSOY | Otobüs Takip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <style>
+        body { margin: 0; padding: 0; background-color: #333333;}
+        #map { height: 100vh; width: 100%; }
+        
+        /* Popup içi yazı düzeni - SOLA DAYALI */
+        .popup-content {
+            font-size: 12px;
+            line-height: 1.4;
+            text-align: left; /* BURASI DEĞİŞTİ: Center yerine Left */
+            font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            min-width: 120px; /* Genişliği sabitledim, daha düzgün durur */
+        }
+    </style>
+    <link rel="shortcut icon" href="https://www.aliosmanulusoy.com/images/favicon.png" type="image/png">
+    <link rel="icon" href="https://www.aliosmanulusoy.com/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    // 1. Haritayı Başlat
+    var map = L.map('map').setView([41.22, 36.60], 10);
+
+    // 2. Google Maps Katmanı
+    L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+        attribution: '&copy; Google Maps'
+    }).addTo(map);
+
+    // 3. Otobüs İkonu
+    var busIcon = L.icon({
+        iconUrl: 'https://www.aliosmanulusoy.com/images/map_otobus.svg',
+        iconSize: [42, 42],      
+        iconAnchor: [21, 42],    
+        popupAnchor: [1, -34]
+    });
+
+    var markers = {}; 
+
+    async function fetchFleet() {
+        try {
+            let response = await fetch('api.php?v=' + Date.now());
+            if (!response.ok) throw new Error("API Hatası");
+            
+            let buses = await response.json();
+
+            buses.forEach(bus => {
+                let lat = parseFloat(bus.lat);
+                let lng = parseFloat(bus.long); 
+                let plate = bus.plate;
+                
+                // Popup İçeriği
+                let popupContent = `
+                    <div class="popup-content">
+                        <b>Plaka :</b> ${plate}<br>
+                        <b>Hız :</b> ${bus.speed}<br>
+                    </div>
+                `;
+
+                if (markers[plate]) {
+                    markers[plate].setLatLng([lat, lng]);
+                    markers[plate].setPopupContent(popupContent);
+                } else {
+                    var marker = L.marker([lat, lng], {icon: busIcon})
+                        .addTo(map)
+                        .bindPopup(popupContent);
+                    
+                    markers[plate] = marker;
+                    marker.openPopup(); 
+                }
+            });
+
+        } catch (err) {
+            console.error("Veri hatası:", err);
+        }
+    }
+
+    fetchFleet();
+    setInterval(fetchFleet, 30000);
+
+</script>
+</body>
+</html>

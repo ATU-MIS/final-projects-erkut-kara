@@ -1,0 +1,53 @@
+@startuml
+title Bilet Satış Süreci (Ticket Purchase Sequence)
+autonumber
+
+actor "Admin (Agent)" as Admin
+participant "Frontend (React)" as UI
+participant "RouteController" as RouteCtrl
+participant "TicketController" as TicketCtrl
+participant "RouteService" as RouteSvc
+participant "TicketService" as TicketSvc
+database "PostgreSQL (Prisma)" as DB
+
+== 1. Sefer Arama (Search Route) ==
+Admin -> UI: Kalkış, Varış, Tarih Seçer ve "Ara" der
+UI -> RouteCtrl: GET /routes/search?from=X&to=Y&date=Z
+RouteCtrl -> RouteSvc: search(searchDto)
+RouteSvc -> DB: findMany(routes)
+DB --> RouteSvc: Sefer Listesi
+RouteSvc -> RouteSvc: Fiyat ve Segment Kontrolü
+RouteSvc --> RouteCtrl: İşlenmiş Sefer Listesi
+RouteCtrl --> UI: Sefer Kartları (JSON)
+UI --> Admin: Seferleri Listeler
+
+== 2. Koltuk Durumu Sorgulama (Check Availability) ==
+Admin -> UI: Sefer Seçer (Accordion Açılır)
+UI -> TicketCtrl: GET /tickets/available-seats/:id?from=X&to=Y
+TicketCtrl -> TicketSvc: getAvailableSeats(routeId, from, to)
+TicketSvc -> DB: findUnique(route + tickets)
+DB --> TicketSvc: Route ve Satılan Biletler
+TicketSvc -> TicketSvc: Segment Çakışma Kontrolü (Overlap Logic)
+note right of TicketSvc
+  Formül: (Ticket.Start < Query.End) 
+  AND (Ticket.End > Query.Start)
+end note
+TicketSvc --> TicketCtrl: Müsait Koltuk Numaraları ([1, 2, 5...])
+TicketCtrl --> UI: Koltuk Listesi
+UI --> Admin: Otobüs Şeması (Dolu/Boş Koltuklar)
+
+== 3. Bilet Oluşturma (Create Ticket) ==
+Admin -> UI: Koltuk Seçer, Yolcu Bilgilerini Girer
+Admin -> UI: "Satışı Tamamla" Butonuna Basar
+UI -> TicketCtrl: POST /tickets (createDto)
+TicketCtrl -> TicketSvc: create(createDto, userId)
+TicketSvc -> DB: findRoute(id)
+TicketSvc -> TicketSvc: Validasyon (Koltuk Boş mu? Cinsiyet Uygun mu?)
+TicketSvc -> TicketSvc: generatePNR() -> "VV00ABC12"
+TicketSvc -> DB: create(Ticket: CONFIRMED)
+DB --> TicketSvc: Oluşturulan Bilet
+TicketSvc --> TicketCtrl: Bilet Detayı
+TicketCtrl --> UI: 201 Created (Success)
+UI --> Admin: "Satış Başarılı" Mesajı ve PNR
+
+@enduml

@@ -1,0 +1,407 @@
+{
+  "error": false,
+  "code": "Sorunsuz.",
+  "message": "Sorunsuz.",
+  "data": [
+    {
+      "snum": "147649-2535-2855",
+      "from": "HOPA",
+      "to": "HATAY",
+      "emptySeats": 26,
+      "emptySeatsInfo": false,
+      "date": "15.12.2025",
+      "dateView": "15.12.2025",
+      "hour": "13:30",
+      "to_date": "16.12.2025",
+      "to_hour": "12:50",
+      "today": "Pazar'ı",
+      "tomorrow": "Pazartesi'ye",
+      "hourInfo": false,
+      "time": "23:20 Dk",
+      "exp_type": "Express",
+      "bus_type_new": "2+1 ",
+      "bus_type": "GÜNCEL41",
+      "bus_name": "01 GECİCİ 01",
+      "price": 1750,
+      "route_list": [
+        {
+          "name": "KEMALPAŞA (HOPA)",
+          "time": "15-12-2025 | 13:30",
+          "hour": "13:30",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "HOPA",
+          "time": "15-12-2025 | 13:30",
+          "hour": "13:30",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "ARHAVİ",
+          "time": "15-12-2025 | 13:45",
+          "hour": "13:45",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "FINDIKLI",
+          "time": "15-12-2025 | 14:00",
+          "hour": "14:00",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "ARDEŞEN",
+          "time": "15-12-2025 | 14:15",
+          "hour": "14:15",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "PAZAR",
+          "time": "15-12-2025 | 14:30",
+          "hour": "14:30",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "ÇAYELİ",
+          "time": "15-12-2025 | 14:45",
+          "hour": "14:45",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "RİZE",
+          "time": "15-12-2025 | 15:00",
+          "hour": "15:00",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "DEREPAZARI",
+          "time": "15-12-2025 | 15:05",
+          "hour": "15:05",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "İDERE KÖPRÜ",
+          "time": "15-12-2025 | 15:15",
+          "hour": "15:15",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "OF",
+          "time": "15-12-2025 | 15:30",
+          "hour": "15:30",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "SÜRMENE",
+          "time": "15-12-2025 | 15:45",
+          "hour": "15:45",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "ARAKLI",
+          "time": "15-12-2025 | 16:00",
+          "hour": "16:00",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "ARSİN",
+          "time": "15-12-2025 | 16:15",
+          "hour": "16:15",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "TRABZON",
+          "time": "15-12-2025 | 16:30",
+          "hour": "16:30",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "AKÇAABAT",
+          "time": "15-12-2025 | 17:00",
+          "hour": "17:00",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "ÇARŞIBAŞI",
+          "time": "15-12-2025 | 17:15",
+          "hour": "17:15",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "VAKFIKEBİR",
+          "time": "15-12-2025 | 17:30",
+          "hour": "17:30",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "BEŞİKDÜZÜ",
+          "time": "15-12-2025 | 17:40",
+          "hour": "17:40",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "EYNESİL",
+          "time": "15-12-2025 | 17:50",
+          "hour": "17:50",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "GÖRELE",
+          "time": "15-12-2025 | 18:05",
+          "hour": "18:05",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "TİREBOLU",
+          "time": "15-12-2025 | 18:20",
+          "hour": "18:20",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "ESPİYE",
+          "time": "15-12-2025 | 18:35",
+          "hour": "18:35",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "KEŞAP",
+          "time": "15-12-2025 | 18:50",
+          "hour": "18:50",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "GİRESUN",
+          "time": "15-12-2025 | 19:05",
+          "hour": "19:05",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "BULANCAK",
+          "time": "15-12-2025 | 19:20",
+          "hour": "19:20",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "PİRAZİZ",
+          "time": "15-12-2025 | 19:35",
+          "hour": "19:35",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "GÜLYALI HÜSEM DT",
+          "time": "15-12-2025 | 19:50",
+          "hour": "19:50",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "ORDU",
+          "time": "15-12-2025 | 20:30",
+          "hour": "20:30",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "PERŞEMBE (KUMBAŞI)",
+          "time": "15-12-2025 | 20:31",
+          "hour": "20:31",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "FATSA",
+          "time": "15-12-2025 | 21:00",
+          "hour": "21:00",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "ÜNYE",
+          "time": "15-12-2025 | 21:30",
+          "hour": "21:30",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "TERME",
+          "time": "15-12-2025 | 21:45",
+          "hour": "21:45",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "ÇARŞAMBA",
+          "time": "15-12-2025 | 22:00",
+          "hour": "22:00",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "TEKKEKÖY",
+          "time": "15-12-2025 | 22:15",
+          "hour": "22:15",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "SAMSUN",
+          "time": "15-12-2025 | 22:59",
+          "hour": "22:59",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "KAVAK",
+          "time": "15-12-2025 | 23:30",
+          "hour": "23:30",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "HAVZA",
+          "time": "15-12-2025 | 23:59",
+          "hour": "23:59",
+          "date": "15-12-2025"
+        },
+        {
+          "name": "MERZİFON",
+          "time": "16-12-2025 | 00:30",
+          "hour": "00:30",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "ÇORUM",
+          "time": "16-12-2025 | 01:30",
+          "hour": "01:30",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "ALACA",
+          "time": "16-12-2025 | 02:15",
+          "hour": "02:15",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "YOZGAT COŞKUN DT",
+          "time": "16-12-2025 | 02:30",
+          "hour": "02:30",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "YOZGAT",
+          "time": "16-12-2025 | 03:15",
+          "hour": "03:15",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "BOĞAZLIYAN",
+          "time": "16-12-2025 | 05:00",
+          "hour": "05:00",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "KAYSERİ",
+          "time": "16-12-2025 | 06:00",
+          "hour": "06:00",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "NİĞDE",
+          "time": "16-12-2025 | 07:45",
+          "hour": "07:45",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "DEMİRELLER DT",
+          "time": "16-12-2025 | 08:30",
+          "hour": "08:30",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "ADANA",
+          "time": "16-12-2025 | 10:00",
+          "hour": "10:00",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "CEYHAN",
+          "time": "16-12-2025 | 10:30",
+          "hour": "10:30",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "OSMANİYE",
+          "time": "16-12-2025 | 10:45",
+          "hour": "10:45",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "ERZİN",
+          "time": "16-12-2025 | 11:00",
+          "hour": "11:00",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "DEFNE",
+          "time": "16-12-2025 | 11:15",
+          "hour": "11:15",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "DÖRTYOL",
+          "time": "16-12-2025 | 11:30",
+          "hour": "11:30",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "PAYAS",
+          "time": "16-12-2025 | 11:45",
+          "hour": "11:45",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "İSKENDERUN",
+          "time": "16-12-2025 | 12:00",
+          "hour": "12:00",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "KIRIKHAN(TOPBOĞAZI)",
+          "time": "16-12-2025 | 12:35",
+          "hour": "12:35",
+          "date": "16-12-2025"
+        },
+        {
+          "name": "HATAY",
+          "time": "16-12-2025 | 12:50",
+          "hour": "12:50",
+          "date": "16-12-2025"
+        }
+      ],
+      "break_list": [],
+      "bus_features": [
+        {
+          "fileName": 1,
+          "name": "Seyahat süresince cep telefonu kullanmak serbesttir."
+        },
+        {
+          "fileName": 6,
+          "name": "Geniş ve konforlu koltuklar bulunmaktadır."
+        },
+        {
+          "fileName": 7,
+          "name": "Kablosuz internet bağlantısı kullanımınıza açıktır."
+        },
+        {
+          "fileName": 9,
+          "name": "Digiturk yayını bulunmaktadır."
+        },
+        {
+          "fileName": 11,
+          "name": "Araçta usb bağlantı mevcuttur."
+        },
+        {
+          "fileName": 16,
+          "name": "Molalı"
+        },
+        {
+          "fileName": 17,
+          "name": "Hijyen"
+        },
+        {
+          "fileName": 21,
+          "name": "QR medya."
+        }
+      ]
+    }
+  ]
+}
