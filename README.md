@@ -1,5 +1,4 @@
-# 🚌 Ulusoy Turizm - Bus Ticketing & Fleet Management System
- Erkut Saner Kara
+# 🚌 Ulusoy Turizm - Bus Ticketing & Fleet Management System - Erkut Saner Kara
 
 A comprehensive, **Full-Stack** web application designed to handle the digital operations of a modern bus company, including Ticket Sales, Route Management, Real-time Vehicle Tracking, and an advanced Admin Dashboard.
 
