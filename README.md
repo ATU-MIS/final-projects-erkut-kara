@@ -1,5 +1,5 @@
 # 🚌 Ulusoy Turizm - Bus Ticketing & Fleet Management System
-ERKUT SANER KARA
+# ERKUT SANER KARA
 
 A comprehensive, **Full-Stack** web application designed to handle the digital operations of a modern bus company, including Ticket Sales, Route Management, Real-time Vehicle Tracking, and an advanced Admin Dashboard.
 
@@ -10,12 +10,17 @@ The system consists of 3 main modules:
 2.  **Admin Panel:** A powerful dashboard for company staff to manage routes, buses, pricing matrices, and agents.
 3.  **Backend (API):** A robust RESTful API service built with NestJS and PostgreSQL to manage data flow and business logic.
 
+ ## DEMO BİLGİLERİ
+ Ana Sayfa Demo: https://aou.devosuit.com/ <br>
+ Admin Panel Demo (Auth gereklidir): https://auadmin.devosuit.com/ <br>
+ PNR Sorgulama için: PNR: [VV00LJBVP] Tel: [5305303030]
+
 ---
 
 ## 🛠️ Technology Stack
 
 ### Frontend & Admin Panel
-*   **Framework:** Next.js 14 (App Router)
+*   **Framework:** Next.js 15 (App Router)
 *   **Language:** TypeScript
 *   **UI Libraries:** Tailwind CSS, Shadcn/UI, Material UI (Admin)
 *   **State Management:** TanStack Query (React Query)
@@ -34,12 +39,15 @@ The system consists of 3 main modules:
 ## 🌟 Key Features
 
 ### 1. 🖥️ Client Panel (Frontend)
-*   **Advanced Search:** Trip search based on origin, destination, and date with dynamic destination filtering.
+*   **Gidiş-Dönüş (Round Trip) Support:** Full implementation of two-way ticket booking with separate selection phases and unified payment.
 *   **Interactive Seat Selection:** Visual bus layout with Gender-based seat reservation (Male/Female selection logic).
-*   **Trip Details:** Comprehensive view of the route, rest stops, and bus amenities (Wifi, TV, etc.).
+*   **Premium Dark Theme:** Modern slate-900 background across all account, info, and search pages for superior readability and aesthetics.
 *   **Live Tracking (Where is my Bus?):** Real-time tracking of active buses on a map, showing current location and speed.
-*   **PNR Inquiry:** View and manage ticket details using PNR codes or phone numbers.
-*   **Modern UI:** Features Glassmorphism effects, smooth animations, and a fully responsive design.
+*   **User Account System:** 
+    *   **Puan Sistemi:** Earn 10% of ticket price as points (TL) on every trip.
+    *   **Profilim:** Comprehensive view of personal data and recent ticket history.
+    *   **Bilet Yönetimi:** Easy cancellation and suspension (açığa alma) features for users.
+*   **Dynamic Information Pages:** Automated "Resting Facilities" list synced with station data, plus branded FAQ and Passenger Rights.
 
 <div align="center">
   <img src="img/front1.png" width="91%" alt="Frontend Seats" />
@@ -48,18 +56,10 @@ The system consists of 3 main modules:
 </div>
 
 ### 2. 🛡️ Admin Dashboard
-*   **Route Management:**
-    *   Recurring trip creation (e.g., Every day at 09:00).
-    *   **Smart Pricing Engine:** Automatic calculation of segment prices based on distance and duration.
-    *   **Delay Management:** Update trip times individually or in bulk with live updates to the tracking system.
-*   **Fleet Management:**
-    *   Dynamic bus feature management (Icon-based).
-    *   Custom Seat Layout designer (2+1, 2+2 configurations).
-    *   Manual GPS override for live tracking simulation.
-*   **Agency Terminal:**
-    *   Rapid ticket issuance interface for physical sales points.
-    *   Bulk passenger entry and instant confirmation.
-*   **Station & Amenity Management:** Centralized control over cities, rest facilities, and bus hardware.
+*   **Operational Stats:** Real-time dashboard showing daily/monthly revenue, passenger counts, and upcoming trips.
+*   **User Management:** Full CRUD operations for Users, Accounts, and Customers with search by TC No, Name, or Phone.
+*   **Route Management:** Recurring trip creation and **Smart Pricing Engine** for automatic segment price calculation.
+*   **Fleet Management:** Custom Seat Layout designer (2+1, 2+2) and dynamic bus feature management.
 
 <div align="center">
   <img src="img/admin1.png" width="91%" alt="Admin Fleet" />
@@ -68,9 +68,9 @@ The system consists of 3 main modules:
 </div>
 
 ### 3. ⚙️ Backend Logic
-*   **Segment-Based Inventory:** Intelligent algorithm allowing a single seat to be sold multiple times on different segments (e.g., seat sold for A-B becomes available again for B-C).
-*   **Dynamic Pricing:** Ability to define specific prices for every stop-to-stop segment.
-*   **Simulation Engine:** Interpolates bus location based on trip schedule to provide live tracking data without actual GPS hardware.
+*   **Segment-Based Inventory:** Intelligent algorithm allowing a single seat to be sold multiple times on different segments.
+*   **Loyalty Points Engine:** Backend logic for automatic point calculation and accumulation upon ticket confirmation.
+*   **Security & Permissions:** Multi-level authorization (Admin, Agent, Customer) with strict ownership checks for ticket operations.
 
 ---
 
@@ -87,11 +87,9 @@ To run this project locally, follow these steps:
 cd ulusoy-back
 npm install
 # Create a .env file and add your database connection
-# DATABASE_URL="postgresql://user:password@localhost:5432/ulusoy_db"
-npx prisma migrate dev
+npx prisma db push
 npm run start:dev
 ```
-The API will be available at `http://localhost:3000`.
 
 ### 2. Admin Panel Setup
 ```bash
@@ -99,7 +97,6 @@ cd ulusoy-admin
 npm install
 npm run dev
 ```
-The dashboard will be available at `http://localhost:3002`.
 **Default Credentials:** `admin@ulusoy.com` / `admin123`
 
 ### 3. Frontend Setup
@@ -108,10 +105,9 @@ cd ulusoy-front
 npm install
 npm run dev
 ```
-The client panel will be available at `http://localhost:3001`.
 
 ---
 
 ## 👨‍💻 Developer Notes
 
-This project was developed following **Software Engineering** best practices, focusing on modularity, scalability, and maintainability. It demonstrates a high-level integration of real-time data tracking, complex business rules (segment ticketing), and modern UI/UX design patterns.
+This project was developed following **Software Engineering** best practices, focusing on modularity, scalability, and maintainability. It demonstrates a high-level integration of real-time data tracking, complex business rules (segment ticketing), and modern UI/UX design patterns. Verified for production build success across all modules.
